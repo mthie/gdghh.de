@@ -1,10 +1,10 @@
 var Config = (function(){
     var config = {
 		//modify these
-		        'name'          : _CHAPTER_NAME_,
-		        'id'            : _CHAPTER_ID_,
-		        'google_api'    : _API_KEY_,
-		        'pwa_id'        : _PICASA_ALBUM_ID, //picasa web album id
+		        'name'          : "GDG Hamburg",
+		        'id'            : "114226021900650933814",
+		        'google_api'    : "AIzaSyBOEXUFJudIu7fjgt_UcLXRLSAvp84v41k",
+		        'pwa_id'        : "5882271320984473713", //picasa web album id
         //custom stuff
         'cover_photo'   : true, //best results make sure you have 940x180 image
         'cover_color'   : '#ffffff',
@@ -64,7 +64,8 @@ $.getJSON('https://www.googleapis.com/plus/v1/people/'+Config.get('id')+'?fields
     //cover photo
     if(data.cover.coverPhoto.url && Config.get('cover_photo')){
         $('#home').css({
-            'background':'url('+data.cover.coverPhoto.url+') '+data.cover.coverInfo.leftImageOffset+'px '+(data.cover.coverInfo.topImageOffset)+'px',
+            'background':'url('+data.cover.coverPhoto.url+') no-repeat center center',
+            // 'background':'url('+data.cover.coverPhoto.url+') '+data.cover.coverInfo.leftImageOffset+'px '+(data.cover.coverInfo.topImageOffset)+'px',
             'color' : Config.get('cover_color')
         });
         
